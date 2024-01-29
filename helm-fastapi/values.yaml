@@ -2,9 +2,9 @@ postgresql:
   global:
     postgresql:
       auth:
-        username:
-        password:
-        database:
+        username: admin
+        password: password
+        database: booktracker_db
   primary:
     persistence:
       size: 500Mi
@@ -15,13 +15,13 @@ postgresql:
 
 db:
   host: helm-fastapi-postgresql.default.svc.cluster.local
-  database:
-  user:
-  password:
-  port:
+  database: booktracker_db
+  user: admin
+  password: password
+  port: "5432"
 
 certManager:
-  email:
+  email: email
   ingressClass: nginx # or the class of your Ingress controller
 
 app:
