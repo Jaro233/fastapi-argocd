@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: fastapi-app
-          image: j4ro123/fastapi-app:latest
+          image: {{.Values.image.repository}}:{{.Values.image.tag}}
           ports:
             - containerPort: 8000
           env:

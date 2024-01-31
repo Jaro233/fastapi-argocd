@@ -17,7 +17,7 @@ spec:
           service:
             name: {{ .Values.app.name }}
             port:
-              number: 8000 # use appropriate port
+              number: 80 # use appropriate port
   tls:
   - hosts:
     - {{ .Values.app.host }}

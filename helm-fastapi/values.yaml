@@ -3,8 +3,8 @@ postgresql:
     postgresql:
       auth:
         username: admin
-        password: password
-        database: booktracker_db
+        password: password #add
+        database: db #add
   primary:
     persistence:
       size: 500Mi
@@ -13,19 +13,25 @@ postgresql:
     initdb:
       scriptsConfigMap: db-init-script
 
+image:
+  repository: j4ro123/fastapi-app
+  tag: latest
+
+arn: arn # add
+
 db:
   host: helm-fastapi-postgresql.default.svc.cluster.local
-  database: booktracker_db
+  database: db #add
   user: admin
-  password: password
+  password: password #add
   port: "5432"
 
 certManager:
-  email: email
+  email: email # add
   ingressClass: nginx # or the class of your Ingress controller
 
 app:
-  host: fastapi.devops-projects.pl
+  host: fastapi.devopshub.org
   name: fastapi-app
 
 service:
